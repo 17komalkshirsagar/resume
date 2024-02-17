@@ -9,8 +9,8 @@ const app = express()
 app.use(express.json())
 app.use(cors())
 
-app.use(express.static(path.join(__dirname, "dist"))) //nanter hi line add
 app.use("/api/admin", require("./routes/todoRoutes"))
+app.use(express.static(path.join(__dirname, "dist"))) //nanter hi line add
 
 //last ha path 404
 app.use("*", (req, res) => {
